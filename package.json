@@ -1,0 +1,78 @@
+{
+  "name": "@m10c/mui-kit",
+  "version": "0.0.1",
+  "description": "MUI-based admin UI toolkit (theme, form, components, hooks)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
+    "./form": {
+      "types": "./dist/form/index.d.ts",
+      "import": "./dist/form/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "theme": [
+        "./dist/theme/index.d.ts"
+      ],
+      "components": [
+        "./dist/components/index.d.ts"
+      ],
+      "form": [
+        "./dist/form/index.d.ts"
+      ],
+      "hooks": [
+        "./dist/hooks/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "ts": "tsc --noEmit",
+    "lint": "eslint src/"
+  },
+  "peerDependencies": {
+    "@mui/material": ">=6.0.0",
+    "@mui/x-date-pickers": ">=6.0.0",
+    "date-fns": ">=2.0.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "react-hot-toast": ">=2.0.0",
+    "react-typed-form": ">=0.3.0"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@mui/material": "^6.4.7",
+    "@mui/x-date-pickers": "^6.20.0",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "date-fns": "^2.30.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.6.0",
+    "react-typed-form": "0.3.6",
+    "tsup": "^8.4.0",
+    "typescript": "~5.7.2"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.7"
+  }
+}
