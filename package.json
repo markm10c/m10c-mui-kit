@@ -1,5 +1,5 @@
 {
-  "name": "@m10c/mui-kit",
+  "name": "m10c-mui-kit",
   "version": "0.0.1",
   "description": "MUI-based admin UI toolkit (theme, form, components, hooks)",
   "type": "module",
