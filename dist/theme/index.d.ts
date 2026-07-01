@@ -2,12 +2,7 @@ import { ElementType } from 'react';
 import { PaletteOptions, Theme } from '@mui/material/styles';
 export { Theme } from '@mui/material/styles';
 
-type PrimaryColor =
-  | 'chateauGreen'
-  | 'indigo'
-  | 'neonBlue'
-  | 'royalBlue'
-  | 'tomatoOrange';
+type PrimaryColor = 'indigo' | 'neonBlue';
 
 type Direction = 'ltr' | 'rtl';
 
@@ -26,22 +21,6 @@ interface ThemeConfig {
 }
 declare function createMuiKitTheme(config: ThemeConfig): Theme;
 
-declare module '@mui/material/Chip/Chip' {
-    interface ChipPropsVariantOverrides {
-        soft: true;
-    }
-}
-declare module '@mui/material/Chip/chipClasses' {
-    interface ChipClasses {
-        soft: string;
-        softPrimary: string;
-        softSecondary: string;
-        softSuccess: string;
-        softInfo: string;
-        softWarning: string;
-        softError: string;
-    }
-}
 declare module '@mui/material/styles/createPalette' {
     interface PaletteRange {
         50: string;
@@ -58,50 +37,22 @@ declare module '@mui/material/styles/createPalette' {
     }
     interface PaletteColor {
         activated: string;
-        hovered: string;
-        selected: string;
     }
     interface SimplePaletteColorOptions {
         activated?: string;
-        hovered?: string;
-        selected?: string;
     }
     interface Palette {
         neutral: PaletteRange;
         shadow: string;
-        Avatar: {
-            defaultBg: string;
-        };
-        Backdrop: {
-            bg: string;
-        };
-        OutlinedInput: {
-            border: string;
-        };
         TableCell: {
             border: string;
-        };
-        Tooltip: {
-            bg: string;
         };
     }
     interface PaletteOptions {
         neutral?: PaletteRange;
         shadow?: string;
-        Avatar?: {
-            defaultBg?: string;
-        };
-        Backdrop?: {
-            bg?: string;
-        };
-        OutlinedInput?: {
-            border?: string;
-        };
         TableCell?: {
             border?: string;
-        };
-        Tooltip?: {
-            bg?: string;
         };
     }
     interface TypeBackground {

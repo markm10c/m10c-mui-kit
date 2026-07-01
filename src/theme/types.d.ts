@@ -1,11 +1,6 @@
 export type { Theme } from '@mui/material/styles';
 
-export type PrimaryColor =
-  | 'chateauGreen'
-  | 'indigo'
-  | 'neonBlue'
-  | 'royalBlue'
-  | 'tomatoOrange';
+export type PrimaryColor = 'indigo' | 'neonBlue';
 
 export type Direction = 'ltr' | 'rtl';
 

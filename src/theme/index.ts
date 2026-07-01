@@ -1,21 +1,7 @@
-declare module '@mui/material/Chip/Chip' {
-  interface ChipPropsVariantOverrides {
-    soft: true;
-  }
-}
-
-declare module '@mui/material/Chip/chipClasses' {
-  interface ChipClasses {
-    soft: string;
-    softPrimary: string;
-    softSecondary: string;
-    softSuccess: string;
-    softInfo: string;
-    softWarning: string;
-    softError: string;
-  }
-}
-
+// MUI module augmentation for the kit's custom palette tokens. Inlined here (not
+// imported from ./theme) so it lands in dist/theme/index.d.ts — a side-effect
+// import of an ambient-only module does not survive .d.ts bundling. Kept in sync
+// with the identical block in ./theme.ts (imported by components/index.ts).
 declare module '@mui/material/styles/createPalette' {
   interface PaletteRange {
     50: string;
@@ -31,36 +17,26 @@ declare module '@mui/material/styles/createPalette' {
     950: string;
   }
 
+  // Soft-tint background derived from each color's main channel; consumed by
+  // SeverityPill and available for consumer overrides.
   interface PaletteColor {
     activated: string;
-    hovered: string;
-    selected: string;
   }
 
   interface SimplePaletteColorOptions {
     activated?: string;
-    hovered?: string;
-    selected?: string;
   }
 
   interface Palette {
     neutral: PaletteRange;
     shadow: string;
-    Avatar: { defaultBg: string };
-    Backdrop: { bg: string };
-    OutlinedInput: { border: string };
     TableCell: { border: string };
-    Tooltip: { bg: string };
   }
 
   interface PaletteOptions {
     neutral?: PaletteRange;
     shadow?: string;
-    Avatar?: { defaultBg?: string };
-    Backdrop?: { bg?: string };
-    OutlinedInput?: { border?: string };
     TableCell?: { border?: string };
-    Tooltip?: { bg?: string };
   }
 
   interface TypeBackground {
