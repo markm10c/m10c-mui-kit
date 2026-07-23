@@ -1,3 +1,8 @@
+/**
+ * Adapted from https://github.com/devias-io/material-kit-react
+ * @license MIT License Copyright (c) 2021 Devias
+ */
+
 import type { FC } from 'react';
 import Box from '@mui/material/Box';
 import type { ListItemProps } from '@mui/material/ListItem';

@@ -1,6 +1,6 @@
 {
   "name": "@m10c/mui-kit",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "MUI-based admin UI toolkit (theme, form, components, hooks)",
   "license": "MIT",
   "repository": {
