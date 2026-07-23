@@ -19,7 +19,7 @@ export default React.memo(function FieldTextRequired({
 }: Props) {
   return (
     <FieldText
-      field={field as any}
+      field={field as FieldProp<string | null>}
       onChange={(ev) => {
         field.handleValueChange(ev.target.value);
       }}

@@ -3,16 +3,16 @@
  * @license MIT License Copyright (c) 2021 Devias
  */
 
-import type { ElementType } from "react";
-import type { ColorSystemOptions, PaletteOptions } from "@mui/material/styles";
-import { createTheme } from "@mui/material/styles";
-import { deepmerge } from "@mui/utils";
+import type { ElementType } from 'react';
+import type { ColorSystemOptions, PaletteOptions } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
+import { deepmerge } from '@mui/utils';
 
-import { colorSchemes } from "./color-schemes";
-import { components } from "./components/components";
-import { shadows } from "./shadows";
-import type { Direction, PrimaryColor, Theme } from "./types";
-import { typography } from "./typography";
+import { colorSchemes } from './color-schemes';
+import { components } from './components/components';
+import { shadows } from './shadows';
+import type { Direction, PrimaryColor, Theme } from './types';
+import { typography } from './typography';
 
 export interface ThemeConfig {
   primaryColor: PrimaryColor;
@@ -58,7 +58,7 @@ export function createMuiKitTheme(config: ThemeConfig): Theme {
         : {}),
     },
     cssVariables: {
-      colorSchemeSelector: "class",
+      colorSchemeSelector: 'class',
     },
     direction: config.direction,
     shadows,

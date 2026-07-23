@@ -39,7 +39,7 @@ export default function FieldMultiSelect({
 
   React.useEffect(() => {
     if (field.value) {
-      let values: Option[] = [];
+      const values: Option[] = [];
       field.value.forEach((value) => {
         const foundOption = options.find((option) => option.value === value);
         if (foundOption) {

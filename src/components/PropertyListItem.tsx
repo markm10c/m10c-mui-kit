@@ -7,55 +7,58 @@ import Typography from '@mui/material/Typography';
 
 type Direction = 'horizontal' | 'vertical';
 
-// @ts-expect-error
-interface PropertyListItemProps extends ListItemProps {
+interface PropertyListItemProps extends Omit<ListItemProps, 'value'> {
   align?: Direction;
   label: string;
   value?: string | number | null;
 }
 
 const PropertyListItem: FC<PropertyListItemProps> = (props) => {
-  const { align = 'vertical', children, disableGutters, value, label, ...other } = props;
+  const {
+    align = 'vertical',
+    children,
+    disableGutters,
+    value,
+    label,
+    ...other
+  } = props;
 
   return (
     <ListItem
       sx={{
         px: disableGutters ? 0 : 3,
-        py: 1.5
+        py: 1.5,
       }}
       {...other}
     >
       <ListItemText
         disableTypography
-        primary={(
+        primary={
           <Typography
             sx={{ minWidth: align === 'vertical' ? 'inherit' : 180 }}
             variant="subtitle2"
           >
             {label}
           </Typography>
-        )}
-        secondary={(
+        }
+        secondary={
           <Box
             sx={{
               flex: 1,
-              mt: align === 'vertical' ? 0.5 : 0
+              mt: align === 'vertical' ? 0.5 : 0,
             }}
           >
             {children || (
-              <Typography
-                color="text.secondary"
-                variant="body2"
-              >
+              <Typography color="text.secondary" variant="body2">
                 {value}
               </Typography>
             )}
           </Box>
-        )}
+        }
         sx={{
           display: 'flex',
           flexDirection: align === 'vertical' ? 'column' : 'row',
-          my: 0
+          my: 0,
         }}
       />
     </ListItem>

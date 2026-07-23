@@ -4,12 +4,7 @@ import type { Theme } from '@mui/material/styles/createTheme';
 import { styled } from '@mui/material/styles';
 
 export type SeverityPillColor =
-  | 'primary'
-  | 'secondary'
-  | 'error'
-  | 'info'
-  | 'warning'
-  | 'success';
+  'primary' | 'secondary' | 'error' | 'info' | 'warning' | 'success';
 
 interface SeverityPillProps {
   children?: ReactNode;
@@ -24,37 +19,38 @@ interface SeverityPillRootProps {
   };
 }
 
-const SeverityPillRoot = styled('span')<SeverityPillRootProps>(
-  ({ theme, ownerState }) => {
-    const backgroundColor = theme.palette[ownerState.color].activated;
-    const color =
-      theme.palette.mode === 'dark'
-        ? theme.palette[ownerState.color].main
-        : theme.palette[ownerState.color].dark;
+const SeverityPillRoot = styled('span')<SeverityPillRootProps>(({
+  theme,
+  ownerState,
+}) => {
+  const backgroundColor = theme.palette[ownerState.color].activated;
+  const color =
+    theme.palette.mode === 'dark'
+      ? theme.palette[ownerState.color].main
+      : theme.palette[ownerState.color].dark;
 
-    return {
-      alignItems: 'center',
-      backgroundColor,
-      borderRadius: 12,
-      color,
-      cursor: 'default',
-      display: 'inline-flex',
-      flexGrow: 0,
-      flexShrink: 0,
-      fontFamily: theme.typography.fontFamily,
-      fontSize: theme.typography.pxToRem(12),
-      lineHeight: 2,
-      fontWeight: 600,
-      justifyContent: 'center',
-      letterSpacing: 0.5,
-      minWidth: 20,
-      paddingLeft: theme.spacing(1),
-      paddingRight: theme.spacing(1),
-      textTransform: 'uppercase',
-      whiteSpace: 'nowrap',
-    };
-  },
-);
+  return {
+    alignItems: 'center',
+    backgroundColor,
+    borderRadius: 12,
+    color,
+    cursor: 'default',
+    display: 'inline-flex',
+    flexGrow: 0,
+    flexShrink: 0,
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.pxToRem(12),
+    lineHeight: 2,
+    fontWeight: 600,
+    justifyContent: 'center',
+    letterSpacing: 0.5,
+    minWidth: 20,
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
+    textTransform: 'uppercase',
+    whiteSpace: 'nowrap',
+  };
+});
 
 export const SeverityPill: FC<SeverityPillProps> = (props) => {
   const { color = 'primary', children, ...other } = props;
