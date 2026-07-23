@@ -1,3 +1,8 @@
+/**
+ * Adapted from https://github.com/devias-io/material-kit-react
+ * @license MIT License Copyright (c) 2021 Devias
+ */
+
 import type { ColorSystemOptions, PaletteColorOptions } from '@mui/material/styles';
 
 import {
