@@ -1,10 +1,17 @@
 {
-  "name": "m10c-mui-kit",
-  "version": "0.0.1",
+  "name": "@m10c/mui-kit",
+  "version": "1.0.0",
   "description": "MUI-based admin UI toolkit (theme, form, components, hooks)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m10c/mui-kit.git"
+  },
+  "sideEffects": false,
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     "./theme": {
       "types": "./dist/theme/index.d.ts",
@@ -42,6 +49,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "prepublishOnly": "npm run build",
     "ts": "tsc --noEmit",
     "lint": "eslint src/"
   },
