@@ -18,7 +18,6 @@ type Props = PassthroughProps & {
 export default function FieldList({
   field,
   forceDisabled,
-  onChangeText,
   label,
   ...rest
 }: Props) {

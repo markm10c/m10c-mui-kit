@@ -17,10 +17,7 @@ type Props<T extends string | boolean> = {
   required?: boolean;
   vertical?: boolean;
   disabled?: boolean;
-} & Omit<
-  React.ComponentProps<typeof RadioGroup>,
-  'value' | 'onChange' | 'row'
->;
+} & Omit<React.ComponentProps<typeof RadioGroup>, 'value' | 'onChange' | 'row'>;
 
 export default function FieldRadioGroup<T extends string | boolean>({
   field,

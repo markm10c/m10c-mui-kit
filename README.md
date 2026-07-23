@@ -8,10 +8,10 @@ blocks.
 Import directly from the relevant path:
 
 ```typescript
-import { createMuiKitTheme } from 'm10c-mui-kit/theme';
-import { Toaster, SeverityPill } from 'm10c-mui-kit/components';
-import { FieldText, SubmitButton } from 'm10c-mui-kit/form';
-import { usePopover } from 'm10c-mui-kit/hooks';
+import { createMuiKitTheme } from '@m10c/mui-kit/theme';
+import { Toaster, SeverityPill } from '@m10c/mui-kit/components';
+import { FieldText, SubmitButton } from '@m10c/mui-kit/form';
+import { usePopover } from '@m10c/mui-kit/hooks';
 ```
 
 ## Theme
@@ -29,7 +29,7 @@ In the simplest case a project just calls `createMuiKitTheme` and passes the
 result to MUI's `ThemeProvider`:
 
 ```typescript
-import { createMuiKitTheme } from 'm10c-mui-kit/theme';
+import { createMuiKitTheme } from '@m10c/mui-kit/theme';
 import { ThemeProvider } from '@mui/material/styles';
 
 const theme = createMuiKitTheme({ primaryColor: 'indigo' });
@@ -59,7 +59,7 @@ overrides only what it needs (here, typography and component styles):
 
 ```typescript
 import { createTheme } from '@mui/material/styles';
-import { createMuiKitTheme } from 'm10c-mui-kit/theme';
+import { createMuiKitTheme } from '@m10c/mui-kit/theme';
 
 const base = createMuiKitTheme({ primaryColor: 'indigo' });
 
@@ -78,7 +78,7 @@ Form fields are built for [`react-typed-form`](../react-typed-form) — give eac
 one a form field via its `field` prop, and it handles value/validation wiring:
 
 ```typescript
-import { FieldText, SubmitButton } from 'm10c-mui-kit/form';
+import { FieldText, SubmitButton } from '@m10c/mui-kit/form';
 
 <FieldText field={form.getField('name')} label="Name" />
 <SubmitButton form={form}>Save</SubmitButton>

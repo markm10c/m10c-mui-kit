@@ -1,4 +1,12 @@
-import type { ColorSystemOptions, PaletteColorOptions } from '@mui/material/styles';
+/**
+ * Adapted from https://github.com/devias-io/material-kit-react
+ * @license MIT License Copyright (c) 2021 Devias
+ */
+
+import type {
+  ColorSystemOptions,
+  PaletteColorOptions,
+} from '@mui/material/styles';
 
 import {
   california,
@@ -30,15 +38,31 @@ function primaryColorScheme(
   scheme: ColorScheme,
 ): PaletteColorOptions {
   return scheme === 'dark'
-    ? { ...ramp, light: ramp[300], main: ramp[400], dark: ramp[500], contrastText: 'var(--mui-palette-common-white)', activated: activatedTint('primary') }
-    : { ...ramp, light: ramp[400], main: ramp[500], dark: ramp[600], contrastText: 'var(--mui-palette-common-white)', activated: activatedTint('primary') };
+    ? {
+        ...ramp,
+        light: ramp[300],
+        main: ramp[400],
+        dark: ramp[500],
+        contrastText: 'var(--mui-palette-common-white)',
+        activated: activatedTint('primary'),
+      }
+    : {
+        ...ramp,
+        light: ramp[400],
+        main: ramp[500],
+        dark: ramp[600],
+        contrastText: 'var(--mui-palette-common-white)',
+        activated: activatedTint('primary'),
+      };
 }
 
 interface Config {
   primaryColor: PrimaryColor;
 }
 
-export function colorSchemes(config: Config): Partial<Record<ColorScheme, ColorSystemOptions>> {
+export function colorSchemes(
+  config: Config,
+): Partial<Record<ColorScheme, ColorSystemOptions>> {
   const ramp = primaryRamps[config.primaryColor] ?? neonBlue;
 
   return {
@@ -57,12 +81,40 @@ export function colorSchemes(config: Config): Partial<Record<ColorScheme, ColorS
         common: { black: '#000000', white: '#ffffff' },
         divider: 'var(--mui-palette-neutral-700)',
         dividerChannel: '50 56 62',
-        error: { ...redOrange, light: redOrange[300], main: redOrange[400], dark: redOrange[500], contrastText: 'var(--mui-palette-common-black)', activated: activatedTint('error') },
-        info: { ...shakespeare, light: shakespeare[300], main: shakespeare[400], dark: shakespeare[500], contrastText: 'var(--mui-palette-common-black)', activated: activatedTint('info') },
+        error: {
+          ...redOrange,
+          light: redOrange[300],
+          main: redOrange[400],
+          dark: redOrange[500],
+          contrastText: 'var(--mui-palette-common-black)',
+          activated: activatedTint('error'),
+        },
+        info: {
+          ...shakespeare,
+          light: shakespeare[300],
+          main: shakespeare[400],
+          dark: shakespeare[500],
+          contrastText: 'var(--mui-palette-common-black)',
+          activated: activatedTint('info'),
+        },
         neutral: { ...nevada },
         primary: primaryColorScheme(ramp, 'dark'),
-        secondary: { ...nevada, light: nevada[100], main: nevada[200], dark: nevada[300], contrastText: 'var(--mui-palette-common-black)', activated: activatedTint('secondary') },
-        success: { ...kepple, light: kepple[300], main: kepple[400], dark: kepple[500], contrastText: 'var(--mui-palette-common-black)', activated: activatedTint('success') },
+        secondary: {
+          ...nevada,
+          light: nevada[100],
+          main: nevada[200],
+          dark: nevada[300],
+          contrastText: 'var(--mui-palette-common-black)',
+          activated: activatedTint('secondary'),
+        },
+        success: {
+          ...kepple,
+          light: kepple[300],
+          main: kepple[400],
+          dark: kepple[500],
+          contrastText: 'var(--mui-palette-common-black)',
+          activated: activatedTint('success'),
+        },
         text: {
           primary: 'var(--mui-palette-neutral-100)',
           primaryChannel: '240 244 248',
@@ -70,7 +122,14 @@ export function colorSchemes(config: Config): Partial<Record<ColorScheme, ColorS
           secondaryChannel: '159 166 173',
           disabled: 'var(--mui-palette-neutral-600)',
         },
-        warning: { ...california, light: california[300], main: california[400], dark: california[500], contrastText: 'var(--mui-palette-common-black)', activated: activatedTint('warning') },
+        warning: {
+          ...california,
+          light: california[300],
+          main: california[400],
+          dark: california[500],
+          contrastText: 'var(--mui-palette-common-black)',
+          activated: activatedTint('warning'),
+        },
         shadow: 'rgba(0, 0, 0, 0.5)',
         TableCell: { border: 'var(--mui-palette-divider)' },
       },
@@ -90,12 +149,40 @@ export function colorSchemes(config: Config): Partial<Record<ColorScheme, ColorS
         common: { black: '#000000', white: '#ffffff' },
         divider: 'var(--mui-palette-neutral-200)',
         dividerChannel: '220 223 228',
-        error: { ...redOrange, light: redOrange[400], main: redOrange[500], dark: redOrange[600], contrastText: 'var(--mui-palette-common-white)', activated: activatedTint('error') },
-        info: { ...shakespeare, light: shakespeare[400], main: shakespeare[500], dark: shakespeare[600], contrastText: 'var(--mui-palette-common-white)', activated: activatedTint('info') },
+        error: {
+          ...redOrange,
+          light: redOrange[400],
+          main: redOrange[500],
+          dark: redOrange[600],
+          contrastText: 'var(--mui-palette-common-white)',
+          activated: activatedTint('error'),
+        },
+        info: {
+          ...shakespeare,
+          light: shakespeare[400],
+          main: shakespeare[500],
+          dark: shakespeare[600],
+          contrastText: 'var(--mui-palette-common-white)',
+          activated: activatedTint('info'),
+        },
         neutral: { ...stormGrey },
         primary: primaryColorScheme(ramp, 'light'),
-        secondary: { ...nevada, light: nevada[600], main: nevada[700], dark: nevada[800], contrastText: 'var(--mui-palette-common-white)', activated: activatedTint('secondary') },
-        success: { ...kepple, light: kepple[400], main: kepple[500], dark: kepple[600], contrastText: 'var(--mui-palette-common-white)', activated: activatedTint('success') },
+        secondary: {
+          ...nevada,
+          light: nevada[600],
+          main: nevada[700],
+          dark: nevada[800],
+          contrastText: 'var(--mui-palette-common-white)',
+          activated: activatedTint('secondary'),
+        },
+        success: {
+          ...kepple,
+          light: kepple[400],
+          main: kepple[500],
+          dark: kepple[600],
+          contrastText: 'var(--mui-palette-common-white)',
+          activated: activatedTint('success'),
+        },
         text: {
           primary: 'var(--mui-palette-neutral-900)',
           primaryChannel: '33 38 54',
@@ -103,7 +190,14 @@ export function colorSchemes(config: Config): Partial<Record<ColorScheme, ColorS
           secondaryChannel: '102 112 133',
           disabled: 'var(--mui-palette-neutral-400)',
         },
-        warning: { ...california, light: california[400], main: california[500], dark: california[600], contrastText: 'var(--mui-palette-common-white)', activated: activatedTint('warning') },
+        warning: {
+          ...california,
+          light: california[400],
+          main: california[500],
+          dark: california[600],
+          contrastText: 'var(--mui-palette-common-white)',
+          activated: activatedTint('warning'),
+        },
         shadow: 'rgba(0, 0, 0, 0.08)',
         TableCell: { border: 'var(--mui-palette-divider)' },
       },
